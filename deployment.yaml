@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: nowigence-retail-backend
-          image: 09b43a0a6513ee0e880e7fdcf8a24620c2883ac6
+          image: aadilraza339/udemy-argocd-webapp:s
           ports:
             - containerPort: 3000
           env:
