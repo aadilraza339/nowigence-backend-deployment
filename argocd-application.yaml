@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: nowigence-retail-backend
+  namespace: argocd
+spec:
+  project: default
+
+  source: 
+    repoURL: "https://github.com/madgicaltechdom/nowigence-backend-deployment.git"
+    path: deployment-config
+    targetRevision: HEAD
+
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: nowigence-retail-backend
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
+  
+
+    
